@@ -146,6 +146,7 @@ _FlexPathComponent__fpMounted = new WeakMap(), _FlexPathComponent__fpListeners =
                     if (skipRerendering !== true)
                         this.forceUpdate();
                 }));
+                handler(...Container[layer].args);
             };
         }
         else {
@@ -158,6 +159,7 @@ _FlexPathComponent__fpMounted = new WeakMap(), _FlexPathComponent__fpListeners =
                     if (skipRerendering !== true)
                         this.forceUpdate();
                 }));
+                handler(Container[layer].args[index]);
             };
         }
     }
@@ -172,6 +174,7 @@ _FlexPathComponent__fpMounted = new WeakMap(), _FlexPathComponent__fpListeners =
                 if (skipRerendering !== true)
                     this.forceUpdate();
             }));
+            handler(Container[layer][map].get(key) || []);
         };
     }
 };
