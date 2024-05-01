@@ -139,18 +139,19 @@ _FlexPathComponent__fpMounted = new WeakMap(), _FlexPathComponent__fpListeners =
 }, _FlexPathComponent__makeAddFn = function _FlexPathComponent__makeAddFn(layer, map, nokey) {
     if (map === "args") {
         if (nokey) {
-            return (handler, skipRerendering) => {
+            return (handler, skipRerendering, callInitial) => {
                 __classPrivateFieldGet(this, _FlexPathComponent_instances, "m", _FlexPathComponent__pushListener).call(this, updatedEmitter.GetListener(`${layer}-args`, async (...args) => {
                     if (handler)
                         await handler(...args);
                     if (skipRerendering !== true)
                         this.forceUpdate();
                 }));
-                handler(...Container[layer].args);
+                if (callInitial && handler)
+                    handler(...Container[layer].args);
             };
         }
         else {
-            return (index, handler, skipRerendering) => {
+            return (index, handler, skipRerendering, callInitial) => {
                 if (typeof index !== "number" || index < 0 || (index % 1) !== 0)
                     throw new Error("Invalid index value");
                 __classPrivateFieldGet(this, _FlexPathComponent_instances, "m", _FlexPathComponent__pushListener).call(this, updatedEmitter.GetListener(`${layer}-args-${index}`, async (val) => {
@@ -159,12 +160,13 @@ _FlexPathComponent__fpMounted = new WeakMap(), _FlexPathComponent__fpListeners =
                     if (skipRerendering !== true)
                         this.forceUpdate();
                 }));
-                handler(Container[layer].args[index]);
+                if (callInitial && handler)
+                    handler(Container[layer].args[index]);
             };
         }
     }
     else {
-        return (key, handler, skipRerendering) => {
+        return (key, handler, skipRerendering, callInitial) => {
             if (typeof key !== "string")
                 throw new Error("Invalid key value");
             validateKey(key);
@@ -174,7 +176,8 @@ _FlexPathComponent__fpMounted = new WeakMap(), _FlexPathComponent__fpListeners =
                 if (skipRerendering !== true)
                     this.forceUpdate();
             }));
-            handler(Container[layer][map].get(key) || []);
+            if (callInitial && handler)
+                handler(Container[layer][map].get(key) || []);
         };
     }
 };

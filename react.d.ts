@@ -20,7 +20,7 @@ export declare abstract class FlexPathComponent<P = {}, S = {}, SS = any> extend
      * @param handler Update handler function
      * @param skipRerendering Whether to skip the forced render update in case the path changes.
      */
-    protected addFpArgsListener: (handler?: (...args: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean) => void;
+    protected addFpArgsListener: (handler?: (...args: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean, callInitial?: boolean) => void;
     /**
      * Adds a listener to this class that reacts to FlexPath positional argument updates.
      *
@@ -31,7 +31,7 @@ export declare abstract class FlexPathComponent<P = {}, S = {}, SS = any> extend
      * @param handler Update handler function
      * @param skipRerendering Whether to skip the forced render update in case the path changes.
      */
-    protected addFpArgListener: (index: number, handler?: (value: PathParamSingle) => void | Promise<void>, skipRerendering?: boolean) => void;
+    protected addFpArgListener: (index: number, handler?: (value: PathParamSingle) => void | Promise<void>, skipRerendering?: boolean, callInitial?: boolean) => void;
     /**
      * Adds a listener to this class that reacts to FlexPath keyword argument updates.
      *
@@ -42,7 +42,7 @@ export declare abstract class FlexPathComponent<P = {}, S = {}, SS = any> extend
      * @param handler Update handler function
      * @param skipRerendering Whether to skip the forced render update in case the path changes.
      */
-    protected addFpKwargsListener: (key: string, handler?: (values: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean) => void;
+    protected addFpKwargsListener: (key: string, handler?: (values: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean, callInitial?: boolean) => void;
     /**
      * Adds a listener to this class that reacts to FlexPath search param updates.
      *
@@ -53,7 +53,7 @@ export declare abstract class FlexPathComponent<P = {}, S = {}, SS = any> extend
      * @param handler Update handler function
      * @param skipRerendering Whether to skip the forced render update in case the path changes.
      */
-    protected addFpSearchListener: (key: string, handler?: (values: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean) => void;
+    protected addFpSearchListener: (key: string, handler?: (values: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean, callInitial?: boolean) => void;
     /**
      * Adds a listener to this class that reacts to FlexPath hash struct updates.
      *
@@ -63,7 +63,7 @@ export declare abstract class FlexPathComponent<P = {}, S = {}, SS = any> extend
      * @param handler Update handler function
      * @param skipRerendering Whether to skip the forced render update in case the path changes.
      */
-    protected addFpHashArgsListener: (handler?: (...args: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean) => void;
+    protected addFpHashArgsListener: (handler?: (...args: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean, callInitial?: boolean) => void;
     /**
      * Adds a listener to this class that reacts to FlexPath positional hash argument updates.
      *
@@ -74,7 +74,7 @@ export declare abstract class FlexPathComponent<P = {}, S = {}, SS = any> extend
      * @param handler Update handler function
      * @param skipRerendering Whether to skip the forced render update in case the path changes.
      */
-    protected addFpHashArgListener: (index: number, handler?: (value: PathParamSingle) => void | Promise<void>, skipRerendering?: boolean) => void;
+    protected addFpHashArgListener: (index: number, handler?: (value: PathParamSingle) => void | Promise<void>, skipRerendering?: boolean, callInitial?: boolean) => void;
     /**
      * Adds a listener to this class that reacts to FlexPath hash keyword argument updates.
      *
@@ -85,7 +85,7 @@ export declare abstract class FlexPathComponent<P = {}, S = {}, SS = any> extend
      * @param handler Update handler function
      * @param skipRerendering Whether to skip the forced render update in case the path changes.
      */
-    protected addFpHashKwargsListener: (key: string, handler?: (values: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean) => void;
+    protected addFpHashKwargsListener: (key: string, handler?: (values: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean, callInitial?: boolean) => void;
     /**
      * Adds a listener to this class that reacts to FlexPath hash search param updates.
      *
@@ -96,7 +96,7 @@ export declare abstract class FlexPathComponent<P = {}, S = {}, SS = any> extend
      * @param handler Update handler function
      * @param skipRerendering Whether to skip the forced render update in case the path changes.
      */
-    protected addFpHashSearchListener: (key: string, handler?: (values: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean) => void;
+    protected addFpHashSearchListener: (key: string, handler?: (values: PathParamMulti) => void | Promise<void>, skipRerendering?: boolean, callInitial?: boolean) => void;
 }
 /**
  * **React Hook:**
