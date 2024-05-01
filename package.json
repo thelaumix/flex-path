@@ -1,0 +1,60 @@
+{
+  "name": "flex-path",
+  "author": "thelaumix",
+  "version": "0.1.0-b",
+  "description": "Dynamic handler for location / history updates. Inspired by python's args & kwargs system. Includes search query and hash subpath handling. React capable.",
+  "main": "index.js",
+  "type": "module",
+  "types": "./index.d.ts",
+  "module": "./index.js",
+  "license": "MIT",
+  "private": false,
+  "exports": {
+    ".": {
+      "default": "./index.js",
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./react": {
+      "default": "./react.js",
+      "import": "./react.js",
+      "types": "./react.d.ts"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Lukas A. Schopf",
+      "url": "https://thelaumix.com/"
+    }
+  ],
+  "scripts": {
+    "build": "tsc  -d"
+  },
+  "optionalDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6"
+  },
+  "dependencies": {
+    "lux-callback-emitter": "^1.0.1"
+  },
+  "homepage": "https://github.com/thelaumix/flex-path",
+  "keywords": [
+    "path",
+    "url",
+    "history",
+    "pushState",
+    "popState",
+    "replaceState",
+    "navigation",
+    "location",
+    "link",
+    "href",
+    "spa",
+    "single page application",
+    "arguments",
+    "parameters",
+    "query"
+  ]
+}
