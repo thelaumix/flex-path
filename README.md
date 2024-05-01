@@ -1,4 +1,4 @@
-# FlexPath [![NPM package](https://img.shields.io/badge/npm-flex--path-%23CB3837?logo=npm)](https://react.dev/) [![React (optional)](https://img.shields.io/badge/React%20(optional)-%5E18.2.0-x?logo=react&logoColor=%2361DAFB&color=%2361DAFB)](https://react.dev/)
+# FlexPath [![NPM package](https://img.shields.io/badge/npm-flex--path-%23CB3837?logo=npm)](https://www.npmjs.com/package/flex-path) [![React (optional)](https://img.shields.io/badge/React%20(optional)-%5E18.2.0-x?logo=react&logoColor=%2361DAFB&color=%2361DAFB)](https://react.dev/)
 
 
 **FlexPath** attempts to translate the concept of Python's `*args` and `**kwargs` into an alternative URL scheme, with the aim of enhancing functionality and flexibility on SPAs. It manages the history state machine and `<a>` tag interactions, while allowing for complete control over the current path, arguments and parameters.
