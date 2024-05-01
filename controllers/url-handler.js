@@ -204,7 +204,7 @@ function buildFullPath(root) {
     return root.pathname + (root.search.length > 1 ? root.search : "") + (root.hash.length > 1 ? root.hash : "");
 }
 function initSingleton() {
-    if (!SINGLETON_CONTAINER.value)
+    if (SINGLETON_CONTAINER.value != null)
         return;
     SINGLETON_CONTAINER.value = new FlexPath_t();
 }
