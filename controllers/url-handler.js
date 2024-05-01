@@ -67,6 +67,8 @@ function MakeUpdateHandler(layer) {
 const EXTURL_MIDDLEWARES = new Set;
 /**
  * FlexPath global controller
+ *
+ * **Documentation:** https://www.npmjs.com/package/flex-path
  */
 class FlexPath_t {
     constructor() {
@@ -132,7 +134,7 @@ class FlexPath_t {
         navigateToPath(path, typeof target === "boolean" ? (target ? "_blank" : "") : target);
     }
 }
-const SINGLETON = new FlexPath_t();
+const SINGLETON_CONTAINER = {};
 /**
  * Handles navigation to a specified path
  * @param path Raw path value
@@ -201,17 +203,24 @@ export function currentPath() {
 function buildFullPath(root) {
     return root.pathname + (root.search.length > 1 ? root.search : "") + (root.hash.length > 1 ? root.hash : "");
 }
+function initSingleton() {
+    if (!SINGLETON_CONTAINER.value)
+        return;
+    SINGLETON_CONTAINER.value = new FlexPath_t();
+}
 // Hide behind proxy to prevent any overriding
 /**
  * FlexPath global controller
  */
-const FlexPath = new Proxy(SINGLETON, {
-    get: (target, p) => {
-        return target[p];
+const FlexPath = new Proxy({}, {
+    get: (_, p) => {
+        initSingleton();
+        return SINGLETON_CONTAINER.value[p];
     },
-    set: (target, p, newValue) => {
+    set: (_, p, newValue) => {
         if (["raw", "stateMode"].includes(p)) {
-            target[p] = newValue;
+            initSingleton();
+            SINGLETON_CONTAINER.value[p] = newValue;
             return true;
         }
         return false;

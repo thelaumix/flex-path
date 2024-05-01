@@ -1,7 +1,7 @@
 {
   "name": "flex-path",
   "author": "thelaumix",
-  "version": "0.1.0-d",
+  "version": "0.1.1",
   "description": "Dynamic handler for location / history updates. Inspired by python's args & kwargs system. Includes search query and hash subpath handling. React capable.",
   "main": "index.js",
   "type": "module",

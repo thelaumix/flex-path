@@ -602,6 +602,11 @@ A partial object that can be passed to [`EUM$Resolver`](#eumresolver) consisting
 ```
 
 # Patch Notes
+
+### V0.1.1
+- Fixed an issue that caused Vite and rollup to bundle some dependencies in the wrong order, resulting in undefined constructors.
+- Singleton class instance will now be initialized at the first getter call by the FlexPath proxy.
+
 ### V0.1.0
 - Nothing changed yet, because this is the first version. Yayy!
 

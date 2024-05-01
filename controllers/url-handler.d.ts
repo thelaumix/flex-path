@@ -4,6 +4,8 @@ import FP_KwArgs from "./kwargs.js";
 import { HistoryCallMode } from "./location-controller.js";
 /**
  * FlexPath global controller
+ *
+ * **Documentation:** https://www.npmjs.com/package/flex-path
  */
 declare class FlexPath_t {
     /** Main positional argument controller */
